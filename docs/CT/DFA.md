@@ -17,7 +17,7 @@ $M=(K,\sum,\delta,s,F)$
 
 ![FDA 1](pic_DFA/image.png)
 
-上图是一个图灵机，其中最左侧有一个向右箭头表示为初始状态，而$q_1$只有1个圆圈表示其为最终状态。其转移函数为
+上图是一个图灵机，其中最左侧有一个向右箭头表示为初始状态，而$q_0$有2个圆圈表示其为最终状态。其转移函数为
 
 ![FDA delta](./pic_DFA/image-1.png)
 
@@ -33,6 +33,10 @@ $(q_0,aabba)\vdash_M(q_0,abba)\vdash_M(q_0,bba)\vdash_M(q_1,ba)\vdash_M(q_0,a)\v
 
 其中$\vdash_M$，代表FDA的一步移动，我们也可以用$\vdash^*_M$表示**0**到多步移动
 
+在之后的笔记中，由于笔者画图水平的限制x，也会用以下图例来表达图灵机，基本含义与上图相同。
+
+![Alt text](pic_DFA/fsm1.png)
+
 ## 如何用FDA表达一个regular expression
 
 以下是一个例子，如何用FDA识别一个包含3个连续的b的字符串（alphabet为{a,b}）
@@ -43,7 +47,9 @@ $(q_0,aabba)\vdash_M(q_0,abba)\vdash_M(q_0,bba)\vdash_M(q_1,ba)\vdash_M(q_0,a)\v
 2. 当进入$F$后，该字符串已经包含3个连续的b，此时后续输入不应该影响状态，所以其进入$trap\ state$（无论输入如何，均留在该状态）
 3. 在中间状态时，如果输入a，即代表字符串中连续的b断了，此时应该回到初始状态$q_0$
 
-## FDA的操作
+!!! note
+    一个DFA对应一种regular language，即能被该DFA accept的language均属于该类regular language.
 
-事实上，既然string有reverse，拼接，union，FDA也有类似的操作，且可以通过构造得到对两个regular language拼接，并集的FDA，但是这个和非确定性图灵机一起讲更方便，这里略过。
+
+
 

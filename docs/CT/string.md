@@ -78,4 +78,4 @@ Any $L\subseteq\sum^*$ is called a language over $\sum$
 既然有了定义，接下来的问题是，我们如何确定一个字符串是否属于某一Regular Expression呢（等价于，我们如何知道一个解是不是属于某问题的解集），为了解决这个问题，我们引入了图灵机。
 
 ## regular language
-language的集合，符合某一regular expression的language 都可以被称为regular language.
+language的集合，符合某一regular expression的language 都可以被称为regular language。（事实上，我们研究的是字符串的“规则”，但是刚刚所说的regular Expression只是生成字符串的规则的一种，在后面的学习中我们可以看到还有一些字符串虽然无法用regular Expression表达，但是其本身依然依赖着其它的“规则”，所以regular language。）

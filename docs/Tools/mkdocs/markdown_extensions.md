@@ -34,7 +34,7 @@
 ### Definition Lists
 突然发现[官网](https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/)记载的很详细，慢慢学吧x
 
-=== "Tab 1"
+=== "DFA"
     这个地方就是一个试验场
 
 === "Tab 2"
