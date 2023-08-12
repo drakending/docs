@@ -15,7 +15,7 @@
         <link rel="next" href="../DFA/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.11">
     
     
       
@@ -23,10 +23,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
       
       
 
@@ -579,6 +579,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../regular%20language/" class="md-nav__link">
+        regular language
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -729,12 +743,16 @@
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>以1结尾的字符串的Regular Expression</p>
-<details class="answer"><summary>Answer</summary><p><span class="arithmatex">\((0\cup1)^*1\)</span></p>
+<details class="answer">
+<summary>Answer</summary>
+<p><span class="arithmatex">\((0\cup1)^*1\)</span></p>
 </details>
 </div>
 <div class="tabbed-block">
 <p>包含111的字符串的Regular Expression</p>
-<details class="answer"><summary>Answer</summary><p><span class="arithmatex">\(0^*\cup(((0^*(1\cup(11)))((00^*)(1\cup(11)))^*))\)</span></p>
+<details class="answer">
+<summary>Answer</summary>
+<p><span class="arithmatex">\(0^*\cup(((0^*(1\cup(11)))((00^*)(1\cup(11)))^*))\)</span></p>
 <p>真的有必要搞懂吗x，其实没必要，学到后面有一些标准的方法能按部就班完成自然语言与Regular Expression的转换。</p>
 </details>
 </div>
@@ -742,7 +760,7 @@
 </div>
 <p>既然有了定义，接下来的问题是，我们如何确定一个字符串是否属于某一Regular Expression呢（等价于，我们如何知道一个解是不是属于某问题的解集），为了解决这个问题，我们引入了图灵机。</p>
 <h2 id="regular-language">regular language</h2>
-<p>language的集合，符合某一regular expression的language 都可以被称为regular language.</p>
+<p>language的集合，符合某一regular expression的language 都可以被称为regular language。（事实上，我们研究的是字符串的“规则”，但是刚刚所说的regular Expression只是生成字符串的规则的一种，在后面的学习中我们可以看到还有一些字符串虽然无法用regular Expression表达，但是其本身依然依赖着其它的“规则”，所以regular language。）</p>
 <div class="footnote">
 <hr />
 <ol>
@@ -788,22 +806,16 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.path"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.path"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      <script src="../../assets/javascripts/bundle.fac441b0.min.js"></script>
       
-        
-          <script src="../../javascripts/mathjax.js"></script>
-        
+        <script src="../../javascripts/mathjax.js"></script>
       
-        
-          <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-        
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        
-          <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-        
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

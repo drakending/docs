@@ -12,8 +12,10 @@
         <link rel="prev" href="../DFA/">
       
       
+        <link rel="next" href="../regular%20language/">
+      
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.11">
     
     
       
@@ -21,10 +23,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
       
       
 
@@ -539,12 +541,46 @@
     NFA和DFA等价性
   </a>
   
+    <nav class="md-nav" aria-label="NFA和DFA等价性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    例子
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    公式化表达
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../regular%20language/" class="md-nav__link">
+        regular language
+      </a>
     </li>
   
 
@@ -601,6 +637,26 @@
     NFA和DFA等价性
   </a>
   
+    <nav class="md-nav" aria-label="NFA和DFA等价性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    例子
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    公式化表达
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -637,14 +693,56 @@
 <p><span class="arithmatex">\(\Delta=K\times(\sum\cup\{e\})\times K\)</span></p>
 <p>与之前的区别就是<span class="arithmatex">\(\delta\)</span>是一个函数，一对state和input只能得到一个值，而<span class="arithmatex">\(\Delta\)</span>是一个集合，一对state和input能得到多个值，而且input可以为空。</p>
 <p>与DFA相同有<span class="arithmatex">\(\vdash^M的定义，此处不重复\)</span></p>
-<p>NFA的设计会简单很多，因为总能猜对，只要我们能保证：
-* 当input属于regular language时候，总有路走对
-* 当input不属于的时候，没有路能走对。</p>
+<p>NFA的设计会简单很多，因为总能猜对，只要我们能保证：</p>
+<ul>
+<li>当input属于regular language时候，总有路走对。</li>
+<li>当input不属于的时候，没有路能走对。</li>
+</ul>
 <h2 id="nfadfa">NFA和DFA等价性</h2>
 <blockquote>
 <p>任意一台NFA均有和他等价的DFA</p>
 </blockquote>
 <p>对于任意一NFA，如果我们把它的状态的集合看成一个状态，那由于每次输入一个字符，一个状态能跳转到的状态终究是属于该NFA状态的集合，所有我们可以用状态的集合组成的状态来描述NFA的跳转，此时的跳转是确定的。</p>
+<h3 id="_3">例子</h3>
+<p>我们将用如下例子来说明一个DFA是如何转化为NFA的</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">NFA</label><label for="__tabbed_1_2">DFA 状态</label><label for="__tabbed_1_3">DFA 构造</label><label for="__tabbed_1_4">最终结果</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="原NFA" src="../NFA.assets/NFA1.png" /></p>
+</div>
+<div class="tabbed-block">
+<p>将NFA中的可能状态的集合作为DFA的可能状态，得状态如下：</p>
+<p><span class="arithmatex">\(\{q_0\},\{q_0,q_1\},\{q_1\},\emptyset\)</span></p>
+<p>以上是DFA的可能状态，其中，初始状态与NFA相同，为<span class="arithmatex">\(\{q_0\}\)</span>，最终状态为包含NFA中最终状态的集合，为<span class="arithmatex">\(\{q_0,q_1\},\{q_1\}\)</span></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="原NFA" src="../NFA.assets/NFA1.png" /></p>
+<p>NFA中<span class="arithmatex">\(q_0\)</span>输入a后只会跳转到<span class="arithmatex">\(q_0\)</span>，而<span class="arithmatex">\(q_0\)</span>输入b后有可能跳转到<span class="arithmatex">\(\{q_0,q_1\}\)</span></p>
+<p>对于<span class="arithmatex">\(q_1\)</span>来说，无论a还是b,路都是断掉的，所以输入a,b后，进入空集状态，对于空集状态亦如此。</p>
+<p>对于<span class="arithmatex">\(\{q_0,q_1\}\)</span>，读a之后有可能出现的集合只有<span class="arithmatex">\(q_0\)</span>（<span class="arithmatex">\(q_1\)</span>读入a无之后状态，<span class="arithmatex">\(q_0\)</span>读入a进入<span class="arithmatex">\(q_0\)</span>），读入b之后有可能去到的状态还是<span class="arithmatex">\(\{q_0,q_1\}\)</span>，得下图。</p>
+<p><img alt="Alt text" src="../NFA.assets/DFA1.png" /></p>
+</div>
+<div class="tabbed-block">
+<p>由于初始状态为<span class="arithmatex">\(q_0\)</span>，所以有些状态无法到达，删掉这些状态，得到最终结果
+<img alt="Alt text" src="../NFA.assets/DFAF.png" /></p>
+</div>
+</div>
+</div>
+<p>（画图真的好烂啊我x）</p>
+<h3 id="_4">公式化表达</h3>
+<p>我们定义一个<span class="arithmatex">\(E(q)\)</span>具有如下性质</p>
+<ul>
+<li><span class="arithmatex">\(q\in E(q)\)</span></li>
+<li><span class="arithmatex">\(if (p,e,r) \in \Delta,r\in E(q)\)</span></li>
+</ul>
+<p>我把它叫做q的等价状态集（因为他们之间的转移无需输入任何字符）</p>
+<p>那么对于一个NFA <span class="arithmatex">\(M=\{K,\sum,\Delta,s,F\}\)</span>，我们可以找到一个DFA <span class="arithmatex">\(M'=\{K',\sum,\delta',s',F'\}\)</span>，其中：</p>
+<ul>
+<li><span class="arithmatex">\(K'=2^K\)</span> (即用NFA中状态的集合作状态)</li>
+<li><span class="arithmatex">\(s'=E(s)\)</span> （即所有s的等价状态）</li>
+<li><span class="arithmatex">\(F'=\{Q\subseteq K : Q \cup F \neq \emptyset \}\)</span> （即任何包含NFA中final state的状态）</li>
+<li><span class="arithmatex">\(\delta'(Q,a) = \bigcup \{ E(p): p \in K\ and\ (q,a,p)\in\Delta\ for\ some\ q \in Q \}\)</span>(即Q中的状态所能到达所有的状态和他们的等价状态组成的集合)</li>
+</ul>
 
 
 
@@ -682,22 +780,16 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.path"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.path"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      <script src="../../assets/javascripts/bundle.fac441b0.min.js"></script>
       
-        
-          <script src="../../javascripts/mathjax.js"></script>
-        
+        <script src="../../javascripts/mathjax.js"></script>
       
-        
-          <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-        
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        
-          <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-        
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

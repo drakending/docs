@@ -15,7 +15,7 @@
         <link rel="next" href="../NFA/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.11">
     
     
       
@@ -23,10 +23,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
       
       
 
@@ -529,13 +529,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#fda" class="md-nav__link">
-    FDA的操作
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -553,6 +546,20 @@
     <li class="md-nav__item">
       <a href="../NFA/" class="md-nav__link">
         NFA
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../regular%20language/" class="md-nav__link">
+        regular language
       </a>
     </li>
   
@@ -612,13 +619,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#fda" class="md-nav__link">
-    FDA的操作
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -648,7 +648,7 @@
 </ul>
 <h2 id="_2">示例</h2>
 <p><img alt="FDA 1" src="../pic_DFA/image.png" /></p>
-<p>上图是一个图灵机，其中最左侧有一个向右箭头表示为初始状态，而<span class="arithmatex">\(q_1\)</span>只有1个圆圈表示其为最终状态。其转移函数为</p>
+<p>上图是一个图灵机，其中最左侧有一个向右箭头表示为初始状态，而<span class="arithmatex">\(q_0\)</span>有2个圆圈表示其为最终状态。其转移函数为</p>
 <p><img alt="FDA delta" src="../pic_DFA/image-1.png" /></p>
 <p>在如上图灵机中，假如输入为aabba,则其状态变化为<span class="arithmatex">\(q_0,q_0,q_1,q_0,q_0\)</span>，最终停在<span class="arithmatex">\(q_0\)</span></p>
 <p>我们把如上过程表示为</p>
@@ -659,6 +659,8 @@
 <p><span class="arithmatex">\((q,aw)\vdash^M (q',w)\)</span> if and only if <span class="arithmatex">\(\delta(q,a)=q'\)</span></p>
 </div>
 <p>其中<span class="arithmatex">\(\vdash_M\)</span>，代表FDA的一步移动，我们也可以用<span class="arithmatex">\(\vdash^*_M\)</span>表示<strong>0</strong>到多步移动</p>
+<p>在之后的笔记中，由于笔者画图水平的限制x，也会用以下图例来表达图灵机，基本含义与上图相同。</p>
+<p><img alt="Alt text" src="../pic_DFA/fsm1.png" /></p>
 <h2 id="fdaregular-expression">如何用FDA表达一个regular expression</h2>
 <p>以下是一个例子，如何用FDA识别一个包含3个连续的b的字符串（alphabet为{a,b}）</p>
 <p><img alt="Alt text" src="../pic_DFA/image-2.png" /></p>
@@ -667,8 +669,10 @@
 <li>当进入<span class="arithmatex">\(F\)</span>后，该字符串已经包含3个连续的b，此时后续输入不应该影响状态，所以其进入<span class="arithmatex">\(trap\ state\)</span>（无论输入如何，均留在该状态）</li>
 <li>在中间状态时，如果输入a，即代表字符串中连续的b断了，此时应该回到初始状态<span class="arithmatex">\(q_0\)</span></li>
 </ol>
-<h2 id="fda">FDA的操作</h2>
-<p>事实上，既然string有reverse，拼接，union，FDA也有类似的操作，且可以通过构造得到对两个regular language拼接，并集的FDA，但是这个和非确定性图灵机一起讲更方便，这里略过。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>一个DFA对应一种regular language，即能被该DFA accept的language均属于该类regular language.</p>
+</div>
 
 
 
@@ -706,22 +710,16 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.path"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.path"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      <script src="../../assets/javascripts/bundle.fac441b0.min.js"></script>
       
-        
-          <script src="../../javascripts/mathjax.js"></script>
-        
+        <script src="../../javascripts/mathjax.js"></script>
       
-        
-          <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-        
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        
-          <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-        
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

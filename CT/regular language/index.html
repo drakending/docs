@@ -9,13 +9,15 @@
       
       
       
+        <link rel="prev" href="../NFA/">
+      
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.11">
     
     
       
-        <title>nn.Module - 黄花鱼的试验田</title>
+        <title>regular language - 黄花鱼的试验田</title>
       
     
     
@@ -67,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#nnmodule" class="md-skip">
+        <a href="#regular-language" class="md-skip">
           跳转至
         </a>
       
@@ -100,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              nn.Module
+              regular language
             
           </span>
         </div>
@@ -192,7 +194,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../1.tensor/" class="md-tabs__link">
+      <a href="../../pytorch/1.tensor/" class="md-tabs__link">
         Pytorch
       </a>
     </li>
@@ -225,13 +227,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../CT/string/" class="md-tabs__link">
+      <a href="../string/" class="md-tabs__link md-tabs__link--active">
         计算理论
       </a>
     </li>
@@ -305,7 +309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.tensor/" class="md-nav__link">
+      <a href="../../pytorch/1.tensor/" class="md-nav__link">
         Tensor
       </a>
     </li>
@@ -319,7 +323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2.datasets/" class="md-nav__link">
+      <a href="../../pytorch/2.datasets/" class="md-nav__link">
         Datasets
       </a>
     </li>
@@ -424,14 +428,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
       
       
       
@@ -440,7 +446,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           计算理论
@@ -453,7 +459,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CT/string/" class="md-nav__link">
+      <a href="../string/" class="md-nav__link">
         基本定义
       </a>
     </li>
@@ -467,7 +473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CT/DFA/" class="md-nav__link">
+      <a href="../DFA/" class="md-nav__link">
         DFA
       </a>
     </li>
@@ -481,7 +487,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CT/NFA/" class="md-nav__link">
+      <a href="../NFA/" class="md-nav__link">
         NFA
       </a>
     </li>
@@ -493,11 +499,106 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../CT/regular%20language/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          regular language
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         regular language
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#language" class="md-nav__link">
+    language操作对正则性质的影响
+  </a>
+  
+    <nav class="md-nav" aria-label="language操作对正则性质的影响">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#union" class="md-nav__link">
+    union
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concatenation" class="md-nav__link">
+    concatenation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kleene-star" class="md-nav__link">
+    Kleene star(重复)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regular-expression-finite-automata" class="md-nav__link">
+    regular expression 和 finite automata的互相转化
+  </a>
+  
+    <nav class="md-nav" aria-label="regular expression 和 finite automata的互相转化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regular-expression-finite-automata_1" class="md-nav__link">
+    regular expression 转 finite automata
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finite-automata-regular-expresssion" class="md-nav__link">
+    finite automata 转 regular expresssion
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -529,6 +630,75 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#language" class="md-nav__link">
+    language操作对正则性质的影响
+  </a>
+  
+    <nav class="md-nav" aria-label="language操作对正则性质的影响">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#union" class="md-nav__link">
+    union
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concatenation" class="md-nav__link">
+    concatenation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kleene-star" class="md-nav__link">
+    Kleene star(重复)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regular-expression-finite-automata" class="md-nav__link">
+    regular expression 和 finite automata的互相转化
+  </a>
+  
+    <nav class="md-nav" aria-label="regular expression 和 finite automata的互相转化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regular-expression-finite-automata_1" class="md-nav__link">
+    regular expression 转 finite automata
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finite-automata-regular-expresssion" class="md-nav__link">
+    finite automata 转 regular expresssion
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -542,8 +712,48 @@
                   
 
 
-<h1 id="nnmodule">nn.Module</h1>
-<p>pytorch-summary</p>
+<h1 id="regular-language">regular language</h1>
+<h2 id="language">language操作对正则性质的影响</h2>
+<p>我们之前学习了language的拼接，重复，合并等操作，那两种regular language经过上述o操作后还能保持其正则性质吗？</p>
+<p>因为regular language和finite automata一一对应，所以，我们只要能够构造出能够接收复合后language的finite automata,就能够证明其正则性保持不变。</p>
+<h3 id="union">union</h3>
+<p>union与或操作类似，对于字符串<span class="arithmatex">\(a\cup b\)</span>，<span class="arithmatex">\(M_1\)</span>能处理a，<span class="arithmatex">\(M_2\)</span>能处理b，我们只需要判断该字符串属于a还是b，即可以将字符串送到对应的automata中处理，而NFA刚好有“选择最优跳转路径”的特性，因此我们构造automata如下：</p>
+<p><img alt="union" src="../pic_rl/union.png" /></p>
+<p>可发现union不改变正则性</p>
+<h3 id="concatenation">concatenation</h3>
+<p>拼接操作下，与上文相同，对于字符串<span class="arithmatex">\(ab\)</span>，我们只需要在字符串a被<span class="arithmatex">\(M_1\)</span>识别完之后跳转到<span class="arithmatex">\(M_2\)</span>，即在<span class="arithmatex">\(M_1\)</span>final state接条空字符串跳转到<span class="arithmatex">\(M_2\)</span>的initial state就可以构造识别<span class="arithmatex">\(ab\)</span>的NFA了，至于什么时候跳转，伟大的NFA会解决这一切的。
+<img alt="concatenation" src="../pic_rl/conca.png" /></p>
+<p>可发现concatenation不改变正则性</p>
+<h3 id="kleene-star">Kleene star(重复)</h3>
+<p>重复字符串与拼接字符串差不多（可看成相同字符串的拼接），因此对于<span class="arithmatex">\(a^*\)</span>，我们可以将<span class="arithmatex">\(M_1\)</span>的final state全部接一条空字符串跳转回去initial state，即可完成。</p>
+<p>了吗？事实上不然，因为Kleene star包括等于0的情况，而以上方法无法识别空字符串，因此我们采用如下方法，新造一个initial state，具体如下图：</p>
+<p><img alt="Kleene" src="../pic_rl/kleene.png" /></p>
+<p>可发现Kleene star不改变正则性。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>拼接，重复和合并均不改变语言的正则性。</p>
+</div>
+<h2 id="regular-expression-finite-automata">regular expression 和 finite automata的互相转化</h2>
+<h3 id="regular-expression-finite-automata_1">regular expression 转 finite automata</h3>
+<p>以上三者为regular expression构造的三种常用手段基于以上三种方法，我们可以总结出通过regular expression构造finite automata的方法：</p>
+<ul>
+<li>对于单个字符，直接构造,如下图：</li>
+</ul>
+<p><img alt="FA_1" src="../pic_rl/R_FA1.png" /></p>
+<ul>
+<li>对于拼接操作，直接拼接两个automata（中间加不加空字符串转移都行）</li>
+</ul>
+<p><img alt="FA_2" src="../pic_rl/R_FA2.png" /></p>
+<ul>
+<li>对于并集，加一个initial state然后空字符串分支，如下图：</li>
+</ul>
+<p><img alt="FA_3" src="../pic_rl/R_FA3.png" /></p>
+<ul>
+<li>对于Kleene star，我们进行如下操作（注意finite state的位置）:</li>
+</ul>
+<p><img alt="FA_4" src="../pic_rl/R_FA4.png" /></p>
+<p>基于以上操作，我们几乎可以把任何regular expression转化成finite automata了。</p>
+<h3 id="finite-automata-regular-expresssion">finite automata 转 regular expresssion</h3>
 
 
 
