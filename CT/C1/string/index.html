@@ -9,24 +9,24 @@
       
       
       
-        <link rel="prev" href="../DFA/">
+        <link rel="prev" href="../../../Tools/mkdocs/markdown_extensions/">
       
       
-        <link rel="next" href="../regular%20language/">
+        <link rel="next" href="../DFA/">
       
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.11">
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
     
     
       
-        <title>NFA - 黄花鱼的试验田</title>
+        <title>基本定义 - 黄花鱼的试验田</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.eebd395e.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -42,7 +42,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#non-deterministic-finite-automata" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -85,7 +85,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../.." title="黄花鱼的试验田" class="md-header__button md-logo" aria-label="黄花鱼的试验田" data-md-component="logo">
+    <a href="../../.." title="黄花鱼的试验田" class="md-header__button md-logo" aria-label="黄花鱼的试验田" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              NFA
+              基本定义
             
           </span>
         </div>
@@ -196,7 +196,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../pytorch/1.tensor/" class="md-tabs__link">
+      <a href="../../../pytorch/1.tensor/" class="md-tabs__link">
         Pytorch
       </a>
     </li>
@@ -217,7 +217,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../Tools/mkdocs/markdown_extensions/" class="md-tabs__link">
+      <a href="../../../Tools/mkdocs/markdown_extensions/" class="md-tabs__link">
         Tools
       </a>
     </li>
@@ -236,11 +236,18 @@
   
   
   
+    
+
+  
+  
+  
     <li class="md-tabs__item">
-      <a href="../string/" class="md-tabs__link md-tabs__link--active">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
         计算理论
       </a>
     </li>
+  
+
   
 
       
@@ -265,7 +272,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="黄花鱼的试验田" class="md-nav__button md-logo" aria-label="黄花鱼的试验田" data-md-component="logo">
+    <a href="../../.." title="黄花鱼的试验田" class="md-nav__button md-logo" aria-label="黄花鱼的试验田" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -311,7 +318,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pytorch/1.tensor/" class="md-nav__link">
+      <a href="../../../pytorch/1.tensor/" class="md-nav__link">
         Tensor
       </a>
     </li>
@@ -325,7 +332,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pytorch/2.datasets/" class="md-nav__link">
+      <a href="../../../pytorch/2.datasets/" class="md-nav__link">
         Datasets
       </a>
     </li>
@@ -403,7 +410,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Tools/mkdocs/markdown_extensions/" class="md-nav__link">
+      <a href="../../../Tools/mkdocs/markdown_extensions/" class="md-nav__link">
         markdown_extensions
       </a>
     </li>
@@ -459,11 +466,124 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../string/" class="md-nav__link">
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          Chapter I
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter I
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          基本定义
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         基本定义
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1alphabet" class="md-nav__link">
+    1.Alphabet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2string" class="md-nav__link">
+    2.String
+  </a>
+  
+    <nav class="md-nav" aria-label="2.String">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#properties-and-operation-on-string" class="md-nav__link">
+    properties and operation on string
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3language" class="md-nav__link">
+    3.Language
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4regular-expression-1" class="md-nav__link">
+    4.Regular expression 1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regular-language" class="md-nav__link">
+    regular language
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -487,86 +607,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          NFA
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../NFA/" class="md-nav__link">
         NFA
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    基本定义
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    公式化定义
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nfadfa" class="md-nav__link">
-    NFA和DFA等价性
-  </a>
-  
-    <nav class="md-nav" aria-label="NFA和DFA等价性">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    例子
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    公式化表达
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -581,6 +626,63 @@
       <a href="../regular%20language/" class="md-nav__link">
         regular language
       </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          Chapter II
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter II
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C2/CFA/" class="md-nav__link">
+        CFA
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -619,43 +721,50 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    基本定义
+  <a href="#1alphabet" class="md-nav__link">
+    1.Alphabet
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    公式化定义
+  <a href="#2string" class="md-nav__link">
+    2.String
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nfadfa" class="md-nav__link">
-    NFA和DFA等价性
-  </a>
-  
-    <nav class="md-nav" aria-label="NFA和DFA等价性">
+    <nav class="md-nav" aria-label="2.String">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    例子
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    公式化表达
+  <a href="#properties-and-operation-on-string" class="md-nav__link">
+    properties and operation on string
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3language" class="md-nav__link">
+    3.Language
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4regular-expression-1" class="md-nav__link">
+    4.Regular expression 1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regular-language" class="md-nav__link">
+    regular language
+  </a>
   
 </li>
       
@@ -674,75 +783,83 @@
                   
 
 
-<h1 id="non-deterministic-finite-automata">非确定性图灵机(Non-deterministic Finite Automata)</h1>
-<h2 id="_1">基本定义</h2>
-<p>以下两图展示了两种NFA相对于DFA的特殊性质。</p>
-<p><img alt="image-20230811171104552" src="../NFA.assets/image-20230811171104552.png" /><img alt="image-20230811171111678" src="../NFA.assets/image-20230811171111678.png" /></p>
+<h1 id="_1">计算理论———最基本的定义</h1>
+<p>一门关于字符串的课（bushi）</p>
+<p>简单来说，可以把问题进行一定程度的抽象，比如用二进制或者其他方式的字符串来表述一个问题，我们从一个最基本的角度来审查，图灵机是怎么解决问题（字符串）的。</p>
+<h2 id="1alphabet">1.Alphabet</h2>
+<p>a <strong>finite</strong> set of symbols. represented by <span class="arithmatex">\(\sum\)</span></p>
+<div class="arithmatex">\[\sum = \{a,...,z\},\{0,1\},\emptyset\]</div>
+<p>一个表示手段而已，不难理解</p>
+<h2 id="2string">2.String</h2>
+<p>a <strong>finite</strong> sequence of symbols from some alphabet.</p>
+<p>该门课里面，对问题的抽象，也是我们关心和研究的东西。</p>
+<h3 id="properties-and-operation-on-string">properties and operation on string</h3>
 <ul>
-<li>在同一个状态同一个输入后，也可以跳转到不同的状态</li>
-<li>即使输入是空，也可以跳转到不同的状态</li>
+<li>length:symbols' number in string</li>
+<li>empty string:长度为0的string</li>
+<li><span class="arithmatex">\(\sum^i\)</span>:在字符集<span class="arithmatex">\(\sum\)</span>上，长度为i的字符串的集合</li>
+<li>concatenation: 拼接，<span class="arithmatex">\(a=123，b=456，ab=123456\)</span></li>
+<li>exponentiation：重复 <span class="arithmatex">\(a=12,a^2=1212\)</span></li>
+<li>reversal: 翻转 <span class="arithmatex">\(a=12,a^R=21\)</span></li>
 </ul>
-<p>那字符串输入图灵机后会发生什么呢，我们有两种理解方式:</p>
+<h2 id="3language">3.Language</h2>
+<p>Any <span class="arithmatex">\(L\subseteq\sum^*\)</span> is called a language over <span class="arithmatex">\(\sum\)</span></p>
+<p>简单来说，语言就是在某个字符集上部分字符串的集合，他们能被归类为一个集合也就有其对应的性质，所以我们在研究language的同时，也是在研究问题本身。</p>
+<p>某个问题的解=某个问题解集具有相同性质=该解集类的字符串有某种相同性质=一种language</p>
+<p>研究怎么区分不同的language=研究问题的可解性</p>
+<h2 id="4regular-expression-1">4.Regular expression <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></h2>
+<p>基于上文，我们要研究的是language的性质，那如何来表达这种性质呢？
+常规的方法是用集合或者自然语言，如，包含1的数量大于3的01字符串，前三个字符是000的01字符串....,而将这些表达书面化，即成为了Regular expression。</p>
+<p>关于regular expression有以下规则:</p>
+<div class="admonition note inline end">
+<p class="admonition-title">Note</p>
 <ul>
-<li>字符串会尝试NFA中转移的每一个可能性，形成一个树状结构，在最后，只要有一种可能性落在了NFA的finial state中，即属于该NFA表达的regular language。</li>
-<li>每次一个字符输入NFA，NFA总会选择最优的分支，如果该字符串输入该NFA表达的regular language，那么最终的状态一定会属于final state</li>
+<li><span class="arithmatex">\(\alpha^*\)</span>代表<span class="arithmatex">\(\alpha\)</span>重复任意多次(<strong>包括0</strong>)</li>
+<li><span class="arithmatex">\(\alpha\cup\beta\)</span>代表<span class="arithmatex">\(\alpha\)</span>或<span class="arithmatex">\(\beta\)</span></li>
 </ul>
-<p>容易知道以上两种表达方式是相同的。</p>
-<h2 id="_2">公式化定义</h2>
-<p>NFA可由5个要素表达：<span class="arithmatex">\(\{K,\sum,\Delta,s,F\}\)</span>,与DFA唯一的区别是<span class="arithmatex">\(\Delta\)</span>:</p>
-<p><span class="arithmatex">\(\Delta=K\times(\sum\cup\{e\})\times K\)</span></p>
-<p>与之前的区别就是<span class="arithmatex">\(\delta\)</span>是一个函数，一对state和input只能得到一个值，而<span class="arithmatex">\(\Delta\)</span>是一个集合，一对state和input能得到多个值，而且input可以为空。</p>
-<p>与DFA相同有<span class="arithmatex">\(\vdash^M的定义，此处不重复\)</span></p>
-<p>NFA的设计会简单很多，因为总能猜对，只要我们能保证：</p>
+</div>
 <ul>
-<li>当input属于regular language时候，总有路走对。</li>
-<li>当input不属于的时候，没有路能走对。</li>
+<li><span class="arithmatex">\(\emptyset\)</span> 和 任一alphabet中的字母均属于regular expression</li>
+<li>如果<span class="arithmatex">\(\alpha\)</span>和<span class="arithmatex">\(\beta\)</span>均为regular expression，则<span class="arithmatex">\(\alpha\beta,\alpha\cup\beta,\alpha^*\)</span>均为regular expression.</li>
 </ul>
-<h2 id="nfadfa">NFA和DFA等价性</h2>
-<blockquote>
-<p>任意一台NFA均有和他等价的DFA</p>
-</blockquote>
-<p>对于任意一NFA，如果我们把它的状态的集合看成一个状态，那由于每次输入一个字符，一个状态能跳转到的状态终究是属于该NFA状态的集合，所有我们可以用状态的集合组成的状态来描述NFA的跳转，此时的跳转是确定的。</p>
-<h3 id="_3">例子</h3>
-<p>我们将用如下例子来说明一个DFA是如何转化为NFA的</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">NFA</label><label for="__tabbed_1_2">DFA 状态</label><label for="__tabbed_1_3">DFA 构造</label><label for="__tabbed_1_4">最终结果</label></div>
+<p>而基于某个regular expression生成的字符串我们可以把它写作<span class="arithmatex">\(\mathcal{L}(\alpha)\)</span>，对于复合的regular expression，很容易发现以下规则。</p>
+<ul>
+<li><span class="arithmatex">\(\mathcal{L}(\emptyset)=\emptyset,\mathcal{L}(\alpha)=\{\alpha\}\)</span></li>
+<li><span class="arithmatex">\(\mathcal{L}(\alpha\cup\beta)=\mathcal{L}(\alpha)\cup\mathcal{L}(\beta)\)</span></li>
+<li><span class="arithmatex">\(\mathcal{L}(\alpha\beta)=\mathcal{L}(\alpha)\mathcal{L}(\beta)\)</span></li>
+<li><span class="arithmatex">\(\mathcal{L}(\alpha^*)=\mathcal{L}(\alpha)^*\)</span></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>上面这些定理看起来十分简单明了（稍微想几个例子大概就懂了），理解的难度大概在概念上，事实上，只要理解清楚等式左边代表着“规则”的复合，等式右边代表着由“规则生成的字符串”的复合，其实没有什么特别难理解的地方。</p>
+</div>
+<p>以下为一些alphabet为01的regular expression的例子。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Example 1</label><label for="__tabbed_1_2">Example 2</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><img alt="原NFA" src="../NFA.assets/NFA1.png" /></p>
+<p>以1结尾的字符串的Regular Expression</p>
+<details class="answer"><summary>Answer</summary><p><span class="arithmatex">\((0\cup1)^*1\)</span></p>
+</details>
 </div>
 <div class="tabbed-block">
-<p>将NFA中的可能状态的集合作为DFA的可能状态，得状态如下：</p>
-<p><span class="arithmatex">\(\{q_0\},\{q_0,q_1\},\{q_1\},\emptyset\)</span></p>
-<p>以上是DFA的可能状态，其中，初始状态与NFA相同，为<span class="arithmatex">\(\{q_0\}\)</span>，最终状态为包含NFA中最终状态的集合，为<span class="arithmatex">\(\{q_0,q_1\},\{q_1\}\)</span></p>
-</div>
-<div class="tabbed-block">
-<p><img alt="原NFA" src="../NFA.assets/NFA1.png" /></p>
-<p>NFA中<span class="arithmatex">\(q_0\)</span>输入a后只会跳转到<span class="arithmatex">\(q_0\)</span>，而<span class="arithmatex">\(q_0\)</span>输入b后有可能跳转到<span class="arithmatex">\(\{q_0,q_1\}\)</span></p>
-<p>对于<span class="arithmatex">\(q_1\)</span>来说，无论a还是b,路都是断掉的，所以输入a,b后，进入空集状态，对于空集状态亦如此。</p>
-<p>对于<span class="arithmatex">\(\{q_0,q_1\}\)</span>，读a之后有可能出现的集合只有<span class="arithmatex">\(q_0\)</span>（<span class="arithmatex">\(q_1\)</span>读入a无之后状态，<span class="arithmatex">\(q_0\)</span>读入a进入<span class="arithmatex">\(q_0\)</span>），读入b之后有可能去到的状态还是<span class="arithmatex">\(\{q_0,q_1\}\)</span>，得下图。</p>
-<p><img alt="Alt text" src="../NFA.assets/DFA1.png" /></p>
-</div>
-<div class="tabbed-block">
-<p>由于初始状态为<span class="arithmatex">\(q_0\)</span>，所以有些状态无法到达，删掉这些状态，得到最终结果
-<img alt="Alt text" src="../NFA.assets/DFAF.png" /></p>
+<p>包含111的字符串的Regular Expression</p>
+<details class="answer"><summary>Answer</summary><p><span class="arithmatex">\(0^*\cup(((0^*(1\cup(11)))((00^*)(1\cup(11)))^*))\)</span></p>
+<p>真的有必要搞懂吗x，其实没必要，学到后面有一些标准的方法能按部就班完成自然语言与Regular Expression的转换。</p>
+</details>
 </div>
 </div>
 </div>
-<p>（画图真的好烂啊我x）</p>
-<h3 id="_4">公式化表达</h3>
-<p>我们定义一个<span class="arithmatex">\(E(q)\)</span>具有如下性质</p>
-<ul>
-<li><span class="arithmatex">\(q\in E(q)\)</span></li>
-<li><span class="arithmatex">\(if (p,e,r) \in \Delta,r\in E(q)\)</span></li>
-</ul>
-<p>我把它叫做q的等价状态集（因为他们之间的转移无需输入任何字符）</p>
-<p>那么对于一个NFA <span class="arithmatex">\(M=\{K,\sum,\Delta,s,F\}\)</span>，我们可以找到一个DFA <span class="arithmatex">\(M'=\{K',\sum,\delta',s',F'\}\)</span>，其中：</p>
-<ul>
-<li><span class="arithmatex">\(K'=2^K\)</span> (即用NFA中状态的集合作状态)</li>
-<li><span class="arithmatex">\(s'=E(s)\)</span> （即所有s的等价状态）</li>
-<li><span class="arithmatex">\(F'=\{Q\subseteq K : Q \cup F \neq \emptyset \}\)</span> （即任何包含NFA中final state的状态）</li>
-<li><span class="arithmatex">\(\delta'(Q,a) = \bigcup \{ E(p): p \in K\ and\ (q,a,p)\in\Delta\ for\ some\ q \in Q \}\)</span>(即Q中的状态所能到达所有的状态和他们的等价状态组成的集合)</li>
-</ul>
+<p>既然有了定义，接下来的问题是，我们如何确定一个字符串是否属于某一Regular Expression呢（等价于，我们如何知道一个解是不是属于某问题的解集），为了解决这个问题，我们引入了图灵机。</p>
+<h2 id="regular-language">regular language</h2>
+<p>language的集合，符合某一regular expression的language 都可以被称为regular language。（事实上，我们研究的是字符串的“规则”，但是刚刚所说的regular Expression只是生成字符串的规则的一种，在后面的学习中我们可以看到还有一些字符串虽然无法用regular Expression表达，但是其本身依然依赖着其它的“规则”，所以regular language。）</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>这部分myc上课好像跳过了但是我觉得还是有必要讲一下的。&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 
@@ -780,16 +897,22 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.path"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.path"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.fac441b0.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
       
-        <script src="../../javascripts/mathjax.js"></script>
+        
+          <script src="../../../javascripts/mathjax.js"></script>
+        
       
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        
+          <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        
       
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+          <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
       
     
   </body>
