@@ -1,4 +1,4 @@
-# 确定性图灵机(Deterministic finite automata)
+# 确定性自动机(Deterministic finite automata)
 
 为了解决上一章留下的问题，我们设想了这样一个机器，当他遇到一个字符串时，按顺序读取字符串，根据字符串的内容作出一定的反应，最后根据读完字符串后**机器停留的状态**决定该字符串是否属于某一Regular Expression。
 

@@ -8,10 +8,13 @@ nav:
     - mkdocs:
       - markdown_extensions: Tools/mkdocs/markdown_extensions.md
   - 计算理论:
-    - 基本定义: CT/string.md
-    - DFA: CT/DFA.md
-    - NFA: CT/NFA.md
-    - regular language: CT/regular language.md
+    - "Chapter I":
+      - 基本定义: CT/C1/string.md
+      - DFA: CT/C1/DFA.md
+      - NFA: CT/C1/NFA.md
+      - regular language: CT/C1/regular language.md
+    - "Chapter II":
+      - CFA: CT/C2/CFA.md
 theme:
   name: material
   features:
