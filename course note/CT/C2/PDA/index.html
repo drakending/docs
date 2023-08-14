@@ -12,7 +12,7 @@
         <link rel="prev" href="../CFG/">
       
       
-        <link rel="next" href="../../../../CG/U3D/001/">
+        <link rel="next" href="../CFG2/">
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
@@ -704,8 +704,28 @@
       
         <li class="md-nav__item">
   <a href="#pdacfg" class="md-nav__link">
-    PDA与CFG的等价性
+    PDA与CFG转换
   </a>
+  
+    <nav class="md-nav" aria-label="PDA与CFG转换">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cfg-to-pda" class="md-nav__link">
+    CFG to PDA
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pda-to-cfg" class="md-nav__link">
+    PDA to CFG
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -713,6 +733,20 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CFG2/" class="md-nav__link">
+        CFG_next
+      </a>
     </li>
   
 
@@ -858,8 +892,28 @@
       
         <li class="md-nav__item">
   <a href="#pdacfg" class="md-nav__link">
-    PDA与CFG的等价性
+    PDA与CFG转换
   </a>
+  
+    <nav class="md-nav" aria-label="PDA与CFG转换">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cfg-to-pda" class="md-nav__link">
+    CFG to PDA
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pda-to-cfg" class="md-nav__link">
+    PDA to CFG
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -883,15 +937,15 @@
 <p>PDA=NFA+stack</p>
 <div class="admonition definition">
 <p class="admonition-title">Definition</p>
-<p>PDA 可以被以下6个变量表示，<span class="arithmatex">\(P=(K,\sum,T,\Delta,s,F)\)</span></p>
+<p>PDA 可以被以下6个变量表示，<span class="arithmatex">\(P=(K,\sum,\Gamma,\Delta,s,F)\)</span></p>
 <ul>
-<li>T:stack alphabet</li>
-<li><span class="arithmatex">\(\Delta\)</span>: <span class="arithmatex">\((K\times (\sum\cup\{e\})\times T^*)\times(K\times T^*)\)</span><ul>
+<li><span class="arithmatex">\(\Gamma\)</span>:stack alphabet</li>
+<li><span class="arithmatex">\(\Delta\)</span>: <span class="arithmatex">\((K\times (\sum\cup\{e\})\times \Gamma^*)\times(K\times \Gamma^*)\)</span><ul>
 <li>第一个<span class="arithmatex">\(K\)</span>：current state</li>
 <li><span class="arithmatex">\(\sum\cup\{e\}\)</span>：读取的字符（可为空）</li>
-<li><span class="arithmatex">\(T^*\)</span>: 从栈中pop out一个string</li>
+<li><span class="arithmatex">\(\Gamma^*\)</span>: 从栈中pop out一个string</li>
 <li>第二个<span class="arithmatex">\(K\)</span>: next state</li>
-<li><span class="arithmatex">\(T^*\)</span>：push string进栈</li>
+<li><span class="arithmatex">\(\Gamma^*\)</span>：push string进栈</li>
 </ul>
 </li>
 </ul>
@@ -917,7 +971,90 @@
 <p class="admonition-title">Danger</p>
 <p>PDA的automata部分为NFA，无法用DFA代替</p>
 </div>
-<h2 id="pdacfg">PDA与CFG的等价性</h2>
+<h2 id="pdacfg">PDA与CFG转换</h2>
+<h3 id="cfg-to-pda">CFG to PDA</h3>
+<p>对于一个CFG:<span class="arithmatex">\((V,\sum,S,R)\)</span>，如何找到对应的P:<span class="arithmatex">\((K,\sum,\Gamma,\Delta,s,F)\)</span>使得P能accept的language：</p>
+<div class="admonition tip">
+<p class="admonition-title">CFG to PDA</p>
+<p>转换方式如下：</p>
+<ul>
+<li><span class="arithmatex">\(K=\{s,f\}\)</span></li>
+<li><span class="arithmatex">\(F=\{f\}\)</span></li>
+<li><span class="arithmatex">\(\Gamma = V\)</span></li>
+<li><span class="arithmatex">\(\Delta =\{\)</span><ul>
+<li><span class="arithmatex">\(((s,e,e),(f,S))\)</span></li>
+<li><span class="arithmatex">\(((s,e,e),(f,S))\ for\ each (A,u)\in R\)</span> </li>
+<li>
+<p><span class="arithmatex">\(((s,a,a),(f,e))\ for\ each A\in \sum\)</span></p>
+<p><span class="arithmatex">\(\}\)</span></p>
+</li>
+</ul>
+</li>
+</ul>
+<p>把CFG放到栈里面，总有一种方法能生成一个完整的CFL字符串，然后和外面匹配成功，进入final state且栈为空，（注意此处是每次中间符号在栈顶的时候进行代换，由于此为非确定图灵机，我们可以相信其总会代换出正确的一条路）</p>
+</div>
+<h3 id="pda-to-cfg">PDA to CFG</h3>
+<p>直接转换较为复杂，我们需要有种方法，从PDA转化成simple PDA,简单PDA的定义如下：</p>
+<div class="admonition definition">
+<p class="admonition-title">Definition</p>
+<p>如果一个P:<span class="arithmatex">\((K,\sum,\Gamma,\Delta,s,F)\)</span>，满足以下所有条件则其为简单PDA：</p>
+<ul>
+<li><span class="arithmatex">\(|F|=1\)</span></li>
+<li>对所有转换<span class="arithmatex">\(((p,a,\alpha),(q,\beta))\in \Delta\)</span> 满足一下两个条件之一：<ul>
+<li><span class="arithmatex">\(\alpha = e\ \And\ |\beta|=1\)</span> (Push 一个字符)</li>
+<li><span class="arithmatex">\(|\alpha|= i\ \And\ \beta = e\)</span> (Pop 一个字符)</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>那怎么进行这种转换呢？方法如下：</p>
+<div class="admonition tip">
+<p class="admonition-title">PDA to simple PDA</p>
+<ul>
+<li>if <span class="arithmatex">\(|F|\ge 1\)</span><ul>
+<li>创造一个新的final state f</li>
+<li>将所有最终状态跳转到到它那，即新增<span class="arithmatex">\(((q,e,e),(f,e))\ for\ q\in F\)</span></li>
+</ul>
+</li>
+<li>if <span class="arithmatex">\(|\alpha|\geq 1\ and\ |\beta|\geq 1\)</span> (既pop又push)<ul>
+<li>创造中间状态r</li>
+<li>删去<span class="arithmatex">\(((p,a,\alpha),(q,\beta))\)</span></li>
+<li>添加<span class="arithmatex">\(((p,a,\alpha),(r,e)),((r,e,e),(q,\beta))\)</span></li>
+</ul>
+</li>
+<li>if <span class="arithmatex">\(|\alpha|\gt 1\ and\ \beta=e\qquad \alpha=c_1c_2...c_k\)</span><ul>
+<li>创造状态<span class="arithmatex">\(r_1r_2....r_{k-1}\)</span></li>
+<li>删去<span class="arithmatex">\(((p,a,x),(q,e))\)</span></li>
+<li>变为<span class="arithmatex">\(((p,a,c_1),(r_1,e)),((r_1,e,c_2),(r_2,e)),...,((r_{k-1},e,c_k),(q,e))\)</span> 一个一个push慢慢push进去</li>
+</ul>
+</li>
+<li>if <span class="arithmatex">\(|\beta|\gt 1\ and\ \alpha=e\qquad \beta=c_1c_2...c_k\)</span><ul>
+<li>和上一点方法雷同，所以不重复</li>
+</ul>
+</li>
+<li>if <span class="arithmatex">\(\beta=e\ \And\ \alpha=1\)</span><ul>
+<li>创造新状态r,选一个字符<span class="arithmatex">\(b\in\Gamma\)</span></li>
+<li>添加 <span class="arithmatex">\(((p,a,e),(r,b)),((r,e,b),(q,e))\)</span>,先push再pop</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>然后就要从simple PDA 变换到CFG，方法如下：</p>
+<div class="admonition tip">
+<p class="admonition-title">simple PDA to CFG</p>
+<p>设P为<span class="arithmatex">\((K,\sum,\Gamma,\Delta,s,\{f\})\)</span>，构造<span class="arithmatex">\(G:(V,\sum,S,R)\)</span> </p>
+<p>对<span class="arithmatex">\(\forall p,q\in K\)</span> 构造 <span class="arithmatex">\(A_{pq}\)</span> 为中间符号</p>
+<p>使得<span class="arithmatex">\(A_{pq}\Rightarrow^*\omega\)</span> 当且仅当 <span class="arithmatex">\(\omega\in\{u\in\sum^*:(p,u,e)\vdash^*(q,e,e)\}\)</span></p>
+<p>即从(p，空栈)出发，读进字符串u之后，会去到(q，空栈)。</p>
+<p>对于该公式我们可以得到两条推论（由于考试不会考这类的构造，所以我们只要知道推论就好了。），即对于从（p，空栈）出发到（q，空栈）的过程，大致可以分为两种情况：</p>
+<ul>
+<li>在中间某个状态r时候变成空栈，则此时<span class="arithmatex">\(A_{pq}\)</span>可分解为<span class="arithmatex">\(A_{pr}A_{rq}\)</span></li>
+<li>在中间没有空栈的情况时，所以p状态push进去的字符a，必然为q状态前最后一个pop的字符（最底端的字符），所以在这种情况下，有如下式子：<ul>
+<li><span class="arithmatex">\(\forall p,q\in K\qquad \forall((p,a,e),(p',\alpha)),((q',b,\alpha),(q,e))\in \Delta\)</span>，则，<span class="arithmatex">\(A_{pq}\)</span>可分解为<span class="arithmatex">\(aA_{p'q'}b\)</span></li>
+</ul>
+</li>
+</ul>
+</div>
 
 
 
