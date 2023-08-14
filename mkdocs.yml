@@ -21,7 +21,10 @@ nav:
   - CG:
     - Unity 3D:
       - Game objects and script: CG/U3D/001.md
-      
+  - 历史:
+    - 中国古代史:
+      - 辽宋西夏:
+        - 辽: history\Sino_ancient\Song\1.md
 theme:
   name: material
   features:
