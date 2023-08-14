@@ -17,6 +17,7 @@ nav:
       - "Chapter II":
         - CFG: course note/CT/C2/CFG.md
         - PDA: course note/CT/C2/PDA.md
+        - CFG_next: course note/CT/C2/CFG2.md
   - CG:
     - Unity 3D:
       - Game objects and script: CG/U3D/001.md

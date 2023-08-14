@@ -24,7 +24,7 @@ $\Delta=K\times(\sum\cup\{e\})\times K$
 
 与之前的区别就是$\delta$是一个函数，一对state和input只能得到一个值，而$\Delta$是一个集合，一对state和input能得到多个值，而且input可以为空。
 
-与DFA相同有$\vdash^M的定义，此处不重复$
+与DFA相同有$\vdash^M$的定义，此处不重复
 
 NFA的设计会简单很多，因为总能猜对，只要我们能保证：
 
