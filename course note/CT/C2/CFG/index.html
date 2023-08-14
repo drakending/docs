@@ -1,0 +1,1182 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../C1/regular%20language/">
+      
+      
+        <link rel="next" href="../PDA/">
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>CFG - 黄花鱼的试验田</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="red">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#context-free-languagecfl" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../../.." title="黄花鱼的试验田" class="md-header__button md-logo" aria-label="黄花鱼的试验田" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            黄花鱼的试验田
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CFG
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="red"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../pytorch/1.tensor/" class="md-tabs__link">
+        Pytorch
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../Tools/mkdocs/markdown_extensions/" class="md-tabs__link">
+        Tools
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../C1/string/" class="md-tabs__link md-tabs__link--active">
+        课程笔记
+      </a>
+    </li>
+  
+
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../CG/U3D/001/" class="md-tabs__link">
+        CG
+      </a>
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="黄花鱼的试验田" class="md-nav__button md-logo" aria-label="黄花鱼的试验田" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    黄花鱼的试验田
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          Pytorch
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Pytorch
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../pytorch/1.tensor/" class="md-nav__link">
+        Tensor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../pytorch/2.datasets/" class="md-nav__link">
+        Datasets
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Tools
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+          mkdocs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          mkdocs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Tools/mkdocs/markdown_extensions/" class="md-nav__link">
+        markdown_extensions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          课程笔记
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          课程笔记
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          计算理论
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          计算理论
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_1" id="__nav_3_1_1_label" tabindex="0">
+          Chapter I
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter I
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C1/string/" class="md-nav__link">
+        基本定义
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C1/DFA/" class="md-nav__link">
+        DFA
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C1/NFA/" class="md-nav__link">
+        NFA
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C1/regular%20language/" class="md-nav__link">
+        regular language
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_2" id="__nav_3_1_2_label" tabindex="0">
+          Chapter II
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter II
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          CFG
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        CFG
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#context-free-grammar" class="md-nav__link">
+    Context-free Grammar
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context-free-language" class="md-nav__link">
+    Context-free Language
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parsing-tree" class="md-nav__link">
+    Parsing tree
+  </a>
+  
+    <nav class="md-nav" aria-label="Parsing tree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ambiguity" class="md-nav__link">
+    ambiguity
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chomsky-normal-formcnf" class="md-nav__link">
+    Chomsky Normal Form(乔姆斯基范式，CNF)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PDA/" class="md-nav__link">
+        PDA
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          CG
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          CG
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+          Unity 3D
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Unity 3D
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../CG/U3D/001/" class="md-nav__link">
+        Game objects and script
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#context-free-grammar" class="md-nav__link">
+    Context-free Grammar
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context-free-language" class="md-nav__link">
+    Context-free Language
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parsing-tree" class="md-nav__link">
+    Parsing tree
+  </a>
+  
+    <nav class="md-nav" aria-label="Parsing tree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ambiguity" class="md-nav__link">
+    ambiguity
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chomsky-normal-formcnf" class="md-nav__link">
+    Chomsky Normal Form(乔姆斯基范式，CNF)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="context-free-languagecfl">Context-free Language(CFL)</h1>
+<p>既然regular language的表达能力是有限的，有没有其他不同的表达方法，能够表达更丰富的language表达方式呢？</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>事实上，学过之前的regular language之后，可以在这里找到很多组概念的对应关系。</p>
+<table>
+<thead>
+<tr>
+<th>Context-free Language</th>
+<th>Regular Language</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Context-free Grammar</td>
+<td>Regular Expression</td>
+</tr>
+<tr>
+<td>Pushdown Automata</td>
+<td>Finite Automata</td>
+</tr>
+<tr>
+<td>Pumping Theorem for CFL</td>
+<td>Pumping Theorem</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="context-free-grammar">Context-free Grammar</h2>
+<p>Context-free Grammar 描述的是一种递推的字符串生成方式</p>
+<div class="admonition example">
+<p class="admonition-title">一种CFG</p>
+<ul>
+<li><span class="arithmatex">\(S\rightarrow aSb\)</span></li>
+<li><span class="arithmatex">\(S\rightarrow A\)</span></li>
+<li><span class="arithmatex">\(S\rightarrow c\)</span></li>
+<li><span class="arithmatex">\(A\rightarrow e\)</span></li>
+</ul>
+<p>基于以上规则的一种字符生成方式如下：</p>
+<p><span class="arithmatex">\(S\Rightarrow aSb\Rightarrow aaSbb\Rightarrow aaAbb\Rightarrow aabb\)</span></p>
+</div>
+<p>以上每一行称作一根条规则(rule),rule由一下三种字符组成:</p>
+<ul>
+<li>non-terminal: S,A</li>
+<li>start symbol: S</li>
+<li>terminal: a,b,c</li>
+</ul>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<ul>
+<li>字符串的生成首先从start symbol开始</li>
+<li>non-terminal 只是一种“中间符号”，最后生成的字符串里面是要消失掉的。</li>
+<li>每一条规则的箭头左侧只能有一个non-terminal。</li>
+</ul>
+</div>
+<p>其严格定义如下：</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>一个CFG由如下几种要素组成 <span class="arithmatex">\(G=(V,\sum,S,R)\)</span></p>
+<ul>
+<li>V : 有限个symbols的集合</li>
+<li><span class="arithmatex">\(\sum\)</span> : 终止符(terminals)的集合，即<span class="arithmatex">\(V-\sum\)</span>为非终止符</li>
+<li><span class="arithmatex">\(S\)</span> : 起始符，<span class="arithmatex">\(S\in V-\sum\)</span></li>
+<li><span class="arithmatex">\(R\)</span> : <span class="arithmatex">\(R\subseteq (V-\sum)\times V^*\)</span> 有限个规则的集合</li>
+</ul>
+<p>与Regular Language中的<span class="arithmatex">\(\vdash\)</span>操作相同，在此处，我们有：</p>
+<p><span class="arithmatex">\(xAy\Rightarrow xuy\)</span>表示一步推导(Derive in one step)</p>
+<p><span class="arithmatex">\(xAy\Rightarrow^* xuy\)</span>表示多步推导（包括0步）</p>
+</div>
+<h2 id="context-free-language">Context-free Language</h2>
+<p>由某种CFG生成的language为Context-free Language.</p>
+<h2 id="parsing-tree">Parsing tree</h2>
+<p>事实上，CFG生成string的过程，可以由树状结构来表示，比如上面给出的字符串生成例子的解析树如下：</p>
+<p><img alt="parse_tree" src="../pic_CFG/parse_tree1.png" /></p>
+<p>解析树这个概念被提出的意义在于，在用CFG生成字符串的时候，对于同一个结果字符串，存在不同顺序的生成方式，比如对于如下CFG:</p>
+<ul>
+<li><span class="arithmatex">\(S \rightarrow e\)</span></li>
+<li><span class="arithmatex">\(S \rightarrow SS\)</span></li>
+<li><span class="arithmatex">\(S \rightarrow (S)\)</span></li>
+</ul>
+<p>要生成字符串:()()，可以有如下两种方式:</p>
+<p><em><span class="arithmatex">\(S\Rightarrow SS \Rightarrow (S)S \Rightarrow (S)(S) \Rightarrow (S)() \Rightarrow ()()\)</span>
+</em><span class="arithmatex">\(S\Rightarrow SS \Rightarrow S(S) \Rightarrow (S)(S) \Rightarrow ()(S) \Rightarrow ()()\)</span></p>
+<p>但对于以上两种方法，我们将他们的解析树画出来，可以发现都是一样的。</p>
+<p><img alt="parse_tree" src="../pic_CFG/parse_tree2.png" /></p>
+<p>由此可以发现，以上两种生成方式可以理解为只是对该树两种不同顺序的“遍历”，其本身并无实质区别。</p>
+<p>因此，解析树能够帮助我们从一个更加统一和规范的角度理解“派生”这种过程。并且我们将解析树相同的派生方式叫做<code>equivalence alsses of derivations</code></p>
+<p>基于此，课本上还定义了最左派生(leftmost derivation)，最右派生(rightmost derivation)，和不同派生方法间的偏序关系，但是这些部分myc上课没讲只是一些概念，所以此处略过，有空再补。</p>
+<h3 id="ambiguity">ambiguity</h3>
+<p>事实上，对于某些CFG来说两种派生方式生成的解析树也有可能不同。比如如下CFG:</p>
+<ul>
+<li><span class="arithmatex">\(E \rightarrow E+E\)</span></li>
+<li><span class="arithmatex">\(E \rightarrow E*E\)</span></li>
+<li><span class="arithmatex">\(E \rightarrow (E)\)</span></li>
+<li><span class="arithmatex">\(E \rightarrow id\)</span></li>
+</ul>
+<p>要生成字符串 id + id * id，有如下两种parsing tree.</p>
+<p><img alt="parse_tree" src="../pic_CFG/am2.png" />  <img alt="parse_tree" src="../pic_CFG/am1.png" /></p>
+<p>这种ambiguity是CFG导致的，事实上，我们可以通过将CFG复杂化，改变成如下形式：</p>
+<ul>
+<li><span class="arithmatex">\(E \rightarrow E+T\)</span></li>
+<li><span class="arithmatex">\(E \rightarrow T\)</span></li>
+<li><span class="arithmatex">\(T \rightarrow T*F\)</span></li>
+<li><span class="arithmatex">\(T \rightarrow F\)</span></li>
+<li><span class="arithmatex">\(F \rightarrow id\)</span></li>
+</ul>
+<p>就可以消除ambiguity。</p>
+<div class="admonition danger">
+<p>除了以上由grammar导致的ambiguity，还有由于语言本身特征导致的ambiguity，我们称之为 <strong>inherently ambiguous</strong>，无论用什么CFG去生成他们都会导致ambiguity，具体例子之后补，此处仅做了解。</p>
+</div>
+<h2 id="chomsky-normal-formcnf">Chomsky Normal Form(乔姆斯基范式，CNF)</h2>
+<p>CFG生成的规则多种多样，但是我们可以定义一种grammar范式，作为基础:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>如果一个CFG符合CNF，那么它每条规则应该符合如下三种形式之一：</p>
+<ol>
+<li><span class="arithmatex">\(S \rightarrow e\)</span></li>
+<li><span class="arithmatex">\(A \rightarrow BC\)</span>，A可为初始状态，BC不可为初始状态。</li>
+<li><span class="arithmatex">\(A \rightarrow a,a \in \sum\)</span> </li>
+</ol>
+</div>
+<p>CNF有如下特性</p>
+<div class="admonition theorem">
+<p class="admonition-title">Theorem</p>
+<ul>
+<li>假如一条长度为n的字符串由CNF生成，那它必然会经过2n-1次派生（n-1次用来增加长度，n次将中间符替换为最终符）</li>
+<li>任意CFG都可以化成CNF的形式。</li>
+</ul>
+</div>
+<p>定理二较为复杂，具体来说，CFG违反CNF的可能如下：</p>
+<ul>
+<li><span class="arithmatex">\(S\)</span> 出现在推导规则右侧</li>
+<li><span class="arithmatex">\(A\rightarrow e\ A\neq S\)</span></li>
+<li><span class="arithmatex">\(A\rightarrow B\ B\in V-\sum\)</span></li>
+<li><span class="arithmatex">\(A\rightarrow u_1u_2u_3...u_k\ k\geq 3\)</span></li>
+<li><span class="arithmatex">\(A\rightarrow u_1u_2\)</span> ,<span class="arithmatex">\(u_1\)</span>或<span class="arithmatex">\(u_2\)</span>不为中间符号</li>
+</ul>
+<p>我们在修正过程中，可以从上到下依次修正，并且在修改某一违反情况时，<strong>对于后面违反规则的修正不可以属于前面的规则，对于前面违反规则的修正可以属于后面的规则</strong></p>
+<p>可以通过如下例子说明修正过程。</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>CFG:</p>
+<ul>
+<li><span class="arithmatex">\(S\rightarrow ASA|aB\)</span></li>
+<li><span class="arithmatex">\(A\rightarrow B|S\)</span></li>
+<li><span class="arithmatex">\(A\rightarrow b|e\)</span></li>
+</ul>
+<p>step I: 修正<span class="arithmatex">\(A\rightarrow S\)</span>，我们可以新定义一个开始字符<span class="arithmatex">\(S_0\)</span>和规则<span class="arithmatex">\(S_0\rightarrow S\)</span>，避免该情况发生。</p>
+<ul>
+<li><span class="arithmatex">\(S_0\rightarrow S\)</span></li>
+<li><span class="arithmatex">\(S\rightarrow ASA|aB\)</span></li>
+<li><span class="arithmatex">\(A\rightarrow B|S\)</span></li>
+<li><span class="arithmatex">\(B\rightarrow b|e\)</span></li>
+</ul>
+<p>step II: 修正<span class="arithmatex">\(B\rightarrow e\)</span>类错误，我们可以删去这条路，然后补一条路在其上游节点(A，S)。</p>
+<ul>
+<li><span class="arithmatex">\(S_0\rightarrow S\)</span></li>
+<li><span class="arithmatex">\(S\rightarrow ASA|aB|ae\)</span></li>
+<li><span class="arithmatex">\(A\rightarrow B|S|e\)</span></li>
+<li><span class="arithmatex">\(B\rightarrow b\)</span></li>
+</ul>
+<p>然后继续修正<span class="arithmatex">\(A\rightarrow e\)</span>。</p>
+<ul>
+<li><span class="arithmatex">\(S_0\rightarrow S\)</span></li>
+<li><span class="arithmatex">\(S\rightarrow ASA|aB|ae|AS|SA|S\)</span></li>
+<li><span class="arithmatex">\(A\rightarrow B|S\)</span></li>
+<li><span class="arithmatex">\(B\rightarrow b\)</span></li>
+</ul>
+<p>第二条删去没意义的，修正为<span class="arithmatex">\(S\rightarrow ASA|aB|a|AS|SA\)</span></p>
+<p>接着处理违反规则3，与违反规则2的处理方式相同，删去该边，然后补上游节点。</p>
+<p>处理<span class="arithmatex">\(S_0\rightarrow S\)</span></p>
+<ul>
+<li><span class="arithmatex">\(S_0\rightarrow ASA|aB|a|AS|SA\)</span></li>
+<li><span class="arithmatex">\(S\rightarrow ASA|aB|a|AS|SA\)</span></li>
+<li><span class="arithmatex">\(A\rightarrow B|S\)</span></li>
+<li><span class="arithmatex">\(B\rightarrow b\)</span></li>
+</ul>
+<p>处理<span class="arithmatex">\(A\rightarrow B\)</span>,<span class="arithmatex">\(A\rightarrow S\)</span></p>
+<ul>
+<li><span class="arithmatex">\(S_0\rightarrow ASA|aB|a|AS|SA\)</span></li>
+<li><span class="arithmatex">\(S\rightarrow ASA|aB|a|AS|SA\)</span></li>
+<li><span class="arithmatex">\(A\rightarrow ASA|aB|a|AS|SA|b\)</span></li>
+<li><span class="arithmatex">\(B\rightarrow b\)</span></li>
+</ul>
+<p>处理规则四，对于生成个数大于3的部分，如<span class="arithmatex">\(S_0\rightarrow ASA\)</span>等，采用如下方式处理：</p>
+<p>定义<span class="arithmatex">\(U\rightarrow SA\)</span>,则<span class="arithmatex">\(S_0 \rightarrow UA\)</span></p>
+<p>如果箭头右边中间符号个数，按如上方式递归处理，</p>
+<p>处理规则五，对箭头右边既有终止符又有中间符号的部分，如<span class="arithmatex">\(A\rightarrow aB\)</span>可以通过如下方式处理：</p>
+<p><span class="arithmatex">\(V\rightarrow a\)</span>，<span class="arithmatex">\(A\rightarrow VB\)</span></p>
+<p>通过这几步一路处理下来，就满足CNF了！！！</p>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.path"], "search": "../../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+        
+          <script src="../../../../javascripts/mathjax.js"></script>
+        
+      
+        
+          <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        
+      
+        
+          <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+      
+    
+  </body>
+</html>
