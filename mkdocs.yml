@@ -7,15 +7,20 @@ nav:
   - Tools:
     - mkdocs:
       - markdown_extensions: Tools/mkdocs/markdown_extensions.md
-  - 计算理论:
-    - "Chapter I":
-      - 基本定义: CT/C1/string.md
-      - DFA: CT/C1/DFA.md
-      - NFA: CT/C1/NFA.md
-      - regular language: CT/C1/regular language.md
-    - "Chapter II":
-      - CFG: CT/C2/CFG.md
-      - PDA: CT/C2/PDA.md
+  - 课程笔记:
+    - 计算理论:
+      - "Chapter I":
+        - 基本定义: course note/CT/C1/string.md
+        - DFA: course note/CT/C1/DFA.md
+        - NFA: course note/CT/C1/NFA.md
+        - regular language: course note/CT/C1/regular language.md
+      - "Chapter II":
+        - CFG: course note/CT/C2/CFG.md
+        - PDA: course note/CT/C2/PDA.md
+  - CG:
+    - Unity 3D:
+      - Game objects and script: CG/U3D/001.md
+      
 theme:
   name: material
   features:
