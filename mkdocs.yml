@@ -14,7 +14,8 @@ nav:
       - NFA: CT/C1/NFA.md
       - regular language: CT/C1/regular language.md
     - "Chapter II":
-      - CFA: CT/C2/CFA.md
+      - CFG: CT/C2/CFG.md
+      - PDA: CT/C2/PDA.md
 theme:
   name: material
   features:
@@ -58,9 +59,7 @@ markdown_extensions:
   - pymdownx.caret
   - pymdownx.critic
   - pymdownx.details
-  - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.emoji
   - pymdownx.highlight
   - pymdownx.inlinehilite
   - pymdownx.keys
@@ -78,7 +77,6 @@ markdown_extensions:
       custom_fences:
         - name: mermaid
           class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true 
   - pymdownx.tasklist:
